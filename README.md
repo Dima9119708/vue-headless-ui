@@ -1,5 +1,42 @@
-# Vue 3 + Vite
+# vue-headless-ui
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+`vue-headless-ui` is a headless UI library for Vue.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+The goal of this repository is to collect reusable UI primitives and higher-level components without locking them into a specific visual style. Components here focus on behavior, state, accessibility, and composition, so they can be embedded into different products and design systems.
+
+This repository is intended for:
+
+- headless Vue components
+- reusable interaction patterns
+- UI building blocks for internal or public design systems
+- isolated component development through Storybook
+
+## Storybook
+
+The component playground and examples are published through Storybook and GitHub Pages.
+
+## Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the app locally:
+
+```bash
+npm run dev
+```
+
+Run Storybook:
+
+```bash
+npm run storybook
+```
+
+Build Storybook:
+
+```bash
+npm run build-storybook
+```
