@@ -116,6 +116,10 @@ const handleClick = () => {
     box-shadow: inset 1px 0 0 #d8dee8, inset -1px 0 0 #d8dee8;
 }
 
+:global(.table-sticky-right-first) > .table-head-cell.table-head-cell--border-right {
+    box-shadow: inset 1px 0 0 #d8dee8, inset -1px 0 0 #d8dee8;
+}
+
 .table-head-cell__button {
     display: inline-flex;
     align-items: center;
