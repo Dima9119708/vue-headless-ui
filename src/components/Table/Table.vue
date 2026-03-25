@@ -106,14 +106,15 @@ const calculateRightSticky = () => {
     const cells = collectCells().reverse();
     const registry = {};
     let offset = 0;
+    const stickyCount = props.tableSettings.stickyRightColumns || 0;
 
-    cells.slice(0, props.tableSettings.stickyRightColumns || 0).forEach(
+    cells.slice(0, stickyCount).forEach(
         (cell, index) => {
             const stickyId = cell.getAttribute('data-sticky-id');
             registry[stickyId] = {
                 width: cell.offsetWidth,
                 offset,
-                isFirst: index === 0
+                isFirst: index === stickyCount - 1
             };
             offset += cell.offsetWidth;
         }
@@ -257,6 +258,6 @@ defineExpose({
 }
 
 :global(.table-sticky-right-first) {
-    box-shadow: -1px 0 0 rgba(216, 221, 230, 0.95);
+    position: sticky !important;
 }
 </style>

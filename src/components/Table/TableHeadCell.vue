@@ -5,11 +5,12 @@ defineOptions({
 
 import { computed, provide, ref, shallowRef, useAttrs, useSlots } from 'vue';
 import Popper from '../Popper/Popper.vue';
-import { tableHeadCellContextKey } from './context.js';
+import { tableHeadCellContextKey, useTableContext } from './context.js';
 
 const cellRef = shallowRef(null);
 const attrs = useAttrs();
 const slots = useSlots();
+const { verticalColumnLines } = useTableContext();
 const openPopper = ref(false);
 const canOpenPopper = computed(() => Boolean(slots['popper-content']));
 const closePopper = () => {
@@ -53,6 +54,9 @@ const handleClick = () => {
                     }
                 "
                 class="table-head-cell"
+                :class="{
+                    'table-head-cell--border-right': verticalColumnLines
+                }"
                 v-bind="attrs"
             >
                 <button
@@ -99,10 +103,17 @@ const handleClick = () => {
     padding: 0 14px;
     border-top: 1px solid #d8dee8;
     border-bottom: 1px solid #d8dee8;
-    border-right: 1px solid #d8dee8;
     background:
         linear-gradient(180deg, #fbfcfe 0%, #eef3fa 100%);
     color: #40526b;
+}
+
+.table-head-cell--border-right {
+    box-shadow: inset -1px 0 0 #d8dee8;
+}
+
+.table-head-cell--border-right.table-sticky-right-first {
+    box-shadow: inset 1px 0 0 #d8dee8, inset -1px 0 0 #d8dee8;
 }
 
 .table-head-cell__button {

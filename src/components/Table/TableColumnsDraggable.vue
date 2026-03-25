@@ -11,7 +11,8 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['reorder']);
-const { applySticky, isScrollLocked, tableEl } = useTableContext();
+const { applySticky, isScrollLocked, tableEl, verticalColumnLines } =
+    useTableContext();
 
 const dragIndicatorLeft = ref(null);
 const dragTargetIndex = ref(null);
@@ -115,6 +116,10 @@ const onEnd = async () => {
         <template #item="{ element, index }">
             <div
                 class="table-columns-draggable__item"
+                :class="{
+                    'table-columns-draggable__item--with-divider':
+                        verticalColumnLines
+                }"
                 v-bind="applySticky(element.field)"
                 data-resizable-column
                 data-draggable
@@ -142,6 +147,10 @@ const onEnd = async () => {
 .table-columns-draggable__item {
     min-width: 0;
     height: 100%;
+}
+
+.table-columns-draggable__item--with-divider.table-sticky-right-first {
+    box-shadow: inset 1px 0 0 #d8dee8;
 }
 
 .table-columns-draggable__indicator {

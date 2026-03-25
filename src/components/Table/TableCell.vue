@@ -87,4 +87,15 @@ defineExpose({
 .table-cell--border-right.table-cell--border-bottom {
     box-shadow: inset -1px 0 0 #dde2ea, inset 0 -1px 0 #dde2ea;
 }
+
+.table-cell--border-right.table-sticky-right-first {
+    box-shadow: inset 1px 0 0 #dde2ea, inset -1px 0 0 #dde2ea;
+}
+
+.table-cell--border-right.table-cell--border-bottom.table-sticky-right-first {
+    box-shadow:
+        inset 1px 0 0 #dde2ea,
+        inset -1px 0 0 #dde2ea,
+        inset 0 -1px 0 #dde2ea;
+}
 </style>
