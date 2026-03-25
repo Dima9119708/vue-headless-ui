@@ -11,9 +11,11 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@faker-js/faker": "^10.4.0",
     "@floating-ui/vue": "^1.1.11",
     "@vueuse/core": "^13.9.0",
-    "vue": "^3.5.30"
+    "vue": "^3.5.30",
+    "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^10.3.3",
