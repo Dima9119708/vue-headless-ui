@@ -138,6 +138,10 @@ const onEnd = async () => {
     display: contents;
 }
 
+:deep(.table-sticky-right-first > .table-head-cell.table-head-cell--border-right) {
+    box-shadow: inset 1px 0 0 #d8dee8, inset -1px 0 0 #d8dee8;
+}
+
 .table-columns-draggable__indicator {
     position: absolute;
     top: 0;
